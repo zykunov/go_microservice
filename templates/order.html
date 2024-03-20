@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>WB level 0</title>
+</head>
+<body>
+
+<div class="container">
+
+   
+    <div class="row bg-light rounded-sm">
+      <div class="col-6">
+        <p class="h4 mt-3">Номер заказа:</p> {{.order_uid}}
+        <p class="h5 mt-3">Поступление:</p>{{.entry}}
+      </div>
+      <div class="col-6"><h4>Трек номер:</h4>{{.track_number}}</div>
+    </div>
+    <hr/>
+    <div class="row bg-light rounded-sm">
+      <div class="col-6"><p class="h4 mt-3">Доставка:</p> </div>
+    </div>
+    <div class="row bg-light rounded-sm">
+      <div class="col-3"><p class="h5 mt-3">ФИО</p> {{.delivery.name}}</div>
+      <div class="col-3"><p class="h5 mt-3">Телефон</p> {{.delivery.phone}}</div>
+      <div class="col-3"><p class="h5 mt-3">Индекс:</p> {{.delivery.zip}}</div>
+      <div class="col-3"><p class="h5 mt-3">Город:</p> {{.delivery.city}}</div>
+      <div class="col-3"><p class="h5 mt-3">Адрес:</p> {{.delivery.address}}</div>
+      <div class="col-3"><p class="h5 mt-3">Регион:</p> {{.delivery.region}}</div>
+      <div class="col-3"><p class="h5 mt-3">email:</p> {{.delivery.email}}</div>
+    </div>
+    <hr/>
+    <div class="row bg-light rounded-sm">
+      <div class="col-6"><p class="h4 mt-3">Оплата:</p> </div>
+    </div>
+    <div class="row bg-light rounded-sm">
+      <div class="col-3"><p class="h5 mt-3">Транзакция:</p> {{.payment.transaction}}</div>
+      <div class="col-3"><p class="h5 mt-3">ID запроса</p> {{.payment.request_id}}</div>
+      <div class="col-3"><p class="h5 mt-3">Валюта:</p> {{.payment.currency}}</div>
+      <div class="col-3"><p class="h5 mt-3">Провайдер:</p> {{.payment.provider}}</div>
+      <div class="col-3"><p class="h5 mt-3">Сумма:</p> {{.payment.amount}}</div>
+      <div class="col-3"><p class="h5 mt-3">Дата и время:</p> {{.payment.payment_dt}}</div>
+      <div class="col-3"><p class="h5 mt-3">Банк:</p> {{.payment.bank}}</div>
+      <div class="col-3"><p class="h5 mt-3">Стоимость доставки:</p>{{.payment.delivery_cost}}</div>
+      <div class="col-3"><p class="h5 mt-3">Количество товаров:</p>{{.payment.goods_total}}</div>
+      <div class="col-3"><p class="h5 mt-3">Таможенный сбор:</p> {{.payment.custom_fee}}</div>
+    </div>
+    <hr/>
+    <div class="row bg-light rounded-sm">
+      <div class="col-6"><p class="h4 mt-3">Товары:</p></div>
+    </div>
+    {{range .items}}
+    <div class="row bg-light rounded-sm">
+      <div class="col-3"><p class="h5 mt-3">Id товара:</p> {{.chrt_id}}</div>
+      <div class="col-3"><p class="h5 mt-3">Трэк номер</p> {{.track_number}}</div>
+      <div class="col-3"><p class="h5 mt-3">Цена:</p> {{.price}}</div>
+      <div class="col-3"><p class="h5 mt-3">rid код:</p>{{.rid}}</div>
+      <div class="col-3"><p class="h5 mt-3">Наименование:</p> {{.name}}</div>
+      <div class="col-3"><p class="h5 mt-3">Количество(sale):</p> {{.sale}}</div>
+      <div class="col-3"><p class="h5 mt-3">Размер:</p> {{.size}}</div>
+      <div class="col-3"><p class="h5 mt-3">Сумма:</p> {{.total_price}}</div>
+      <div class="col-3"><p class="h5 mt-3">NM ID:</p>{{.nm_id}}</div>
+      <div class="col-3"><p class="h5 mt-3">Брэнд:</p>{{.brand}}</div>
+      <div class="col-3"><p class="h5 mt-3">Статус:</p> {{.status}}</div>
+    </div>
+    {{end}}
+    <hr/>
+    <div class="row bg-light rounded-sm">
+      <div class="col-6"><p class="h4 mt-3">Прочее:</p> </div>
+    </div>
+    <div class="row bg-light rounded-sm mb-3">
+      
+      <div class="col-3"><p class="h5 mt-3">Локаль:</p> {{.entry}}</div>
+      <div class="col-3"><p class="h5 mt-3">Внутренняя подпись:</p> {{.internal_signature}}</div>
+      <div class="col-3"><p class="h5 mt-3">Id клиента:</p> {{.customer_id}}</div>
+      <div class="col-3"><p class="h5 mt-3">Служба доставки:</p> {{.delivery_service}}</div>
+      <div class="col-3"><p class="h5 mt-3">shardkey:</p> {{.shardkey}}</div>
+      <div class="col-3"><p class="h5 mt-3">SM ID:</p> {{.sm_id}}</div>
+      <div class="col-3"><p class="h5 mt-3">Дата создания:</p> {{.date_created}}</div>
+      <div class="col-3"><p class="h5 mt-3">oof shard:</p> {{.oof_shard}}</div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
